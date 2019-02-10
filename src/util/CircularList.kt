@@ -1,4 +1,4 @@
-package CodeWarsKata
+package util
 
 class CircularList<T>(vararg val elements: T) {
 
