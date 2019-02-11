@@ -1,4 +1,4 @@
-package CodeWarsKata
+package util
 
 
 fun main(args: Array<String>) {

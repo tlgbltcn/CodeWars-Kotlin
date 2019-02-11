@@ -27,8 +27,6 @@ fun main(args: Array<String>) {
     println(digitsAverage(3579))
 
 
-
-
     //println(m.filter { it%2 ==1})
 }
 

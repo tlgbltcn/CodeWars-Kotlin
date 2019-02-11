@@ -1,6 +1,11 @@
 package CodeWarsKata
 
 
+/**
+ * Replace all vowel to exclamation mark in the sentence. aeiouAEIOU is vowel.
+ */
+
+
 fun main(args: Array<String>) {
 
     print(replace("tolga"))
@@ -18,17 +23,11 @@ fun main(args: Array<String>) {
 }
 
 
-fun replace(s: String): String {
-
-    return s.replace("[aeiouAEIOU]".toRegex(),"!")
-
-}
+fun replace(s: String): String = s.replace("[aeiouAEIOU]".toRegex(),"!")
 
 fun replace__(s: String) : String = s.replace(Regex("[aeiou]", RegexOption.IGNORE_CASE),"!")
 
-
 /*********************** Best Practice *************************/
-
 
 fun replace_(s: String) = s.map { when (it) {
     'a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U' -> '!'

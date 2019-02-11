@@ -1,10 +1,16 @@
 package CodeWarsKata
 
+/**
+ * Return the number (count) of vowels in the given string.
+
+We will consider a, e, i, o, and u as vowels for this Kata.
+
+The input string will only consist of lower case letters and/or spaces.
+ */
 fun main(args: Array<String>) {
     println(getCount(str = "abracadabra"))
     println(getCount_(str = "abracadabra"))
 }
-
 
 fun getCount(str : String) : Int{
     val character = "aeio"
@@ -16,7 +22,6 @@ fun getCount(str : String) : Int{
             if (char.toString().equals(it.toString())) count++
         }
     }
-
     return count
 }
 

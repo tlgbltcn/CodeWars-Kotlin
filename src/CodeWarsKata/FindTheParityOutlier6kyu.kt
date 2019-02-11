@@ -22,7 +22,6 @@ fun main(args: Array<String>) {
     print(find(arrayOf(160, 3, 1719, 19, 11, 13, -21)))
 }
 
-
 fun find(integers: Array<Int>): Int {
     var odd = 0
     var even = 0

@@ -1,6 +1,12 @@
 package CodeWarsKata
-
 import java.util.*
+
+/**
+ * Take 2 strings s1 and s2 including only letters from ato z. Return a new sorted string, the longest possible, containing distinct letters,
+
+each taken only once - coming from s1 or s2. #Examples: ``` a = "xyaabbbccccdefww" b = "xxxxyyyyabklmopq" longest(a, b) -> "abcdefklmopqwxy"
+a = "abcdefghijklmnopqrstuvwxyz" longest(a, a) -> "abcdefghijklmnopqrstuvwxyz" ```
+ */
 
 fun main(args: Array<String>) {
 
@@ -35,15 +41,11 @@ fun longestA(s1:String, s2:String) : String{
     return s1.split("").toSet().union(s2.split("")).toSortedSet().joinToString("")
 }
 
-
-
 /*********************** Best Practice *************************/
-
 
 fun longest_(s1:String, s2:String):String {
     return (s1 + s2).toSortedSet().joinToString("")
 }
-
 
 fun longest__(s1:String, s2:String):String {
     return String((s1 + s2).toCharArray().distinct().sorted().toCharArray())

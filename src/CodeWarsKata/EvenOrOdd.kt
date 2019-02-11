@@ -1,5 +1,8 @@
 package CodeWarsKata
 
+/**
+ * Create a function (or write a script in Shell) that takes an integer as an argument and returns "Even" for even numbers or "Odd" for odd numbers.
+ */
 fun main(args: Array<String>) {
 
     print(evenOrOdd(3))
