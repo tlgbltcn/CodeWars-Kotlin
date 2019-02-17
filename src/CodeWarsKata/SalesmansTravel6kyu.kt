@@ -44,7 +44,10 @@ internal var ad =
 fun main(args: Array<String>) {
 
     print(travel(ad, "NY 5643"))
-
+    print(travell(ad,"NY 5643"))
+    print(travelll(ad,"NY 5643"))
+    print(travellll(ad,"NY 5643"))
+    print(travellllll(ad,"NY 5643"))
 }
 
 fun travel(r: String, zipcode: String): String {

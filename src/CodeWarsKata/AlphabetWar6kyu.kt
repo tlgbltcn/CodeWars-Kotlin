@@ -37,7 +37,7 @@ explodedList = ArrayList(LinkedHashSet<Int>(indexArray.sorted()))
  */
 
 fun main() {
-    print(alphabetWar("z"))
+    print(alphabetWar("zd*www*b"))
 }
 
 fun alphabetWar(fight: String): String {
@@ -71,15 +71,15 @@ fun String.bombExploded(): List<Int> {
 fun String.win(): String {
     var score = 0
     this.forEach {
-        when {
-            it.toString() == "w" -> score -= 4
-            it.toString() == "p" -> score -= 3
-            it.toString() == "b" -> score -= 2
-            it.toString() == "s" -> score -= 1
-            it.toString() == "m" -> score += 4
-            it.toString() == "q" -> score += 3
-            it.toString() == "d" -> score += 2
-            it.toString() == "z" -> score += 1
+        when(it.toString()) {
+            "w" -> score -= 4
+            "p" -> score -= 3
+            "b" -> score -= 2
+            "s" -> score -= 1
+            "m" -> score += 4
+            "q" -> score += 3
+            "d" -> score += 2
+            "z" -> score += 1
         }
     }
 
