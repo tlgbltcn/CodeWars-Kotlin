@@ -29,10 +29,8 @@ fun main() {
 }
 
 
-fun orderWeight(string: String) = string
-    .split(" ")
-    .map { it.sumOfDigits() }
-    .sortedWith(compareBy({ it.second }, { it.first }))
+fun orderWeight(string: String) =
+    string.split(" ").map { it.sumOfDigits() }.sortedWith(compareBy({ it.second }, { it.first }))
     .joinToString(" ") { it.first }
 
 fun String.sumOfDigits() : Pair<String, Int> {
