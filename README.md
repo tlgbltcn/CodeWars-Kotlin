@@ -3,7 +3,7 @@
 [![CodeWars](https://www.codewars.com/users/tolg/badges/large)](https://www.codewars.com/users/tolg "My Honor Badge")
 
 
-[My Codewars Profile](https://www.codewars.com/users/tolg)
+My CodeWars profile: [@tolg](https://www.codewars.com/users/tolg)
 
 Take the code initiation [CodeWars](http://codewars.com/r/8-QhcQ) to enlist and challenge yourself.
 
