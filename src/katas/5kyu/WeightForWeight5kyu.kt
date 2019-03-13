@@ -1,4 +1,4 @@
-package katas.`6kyu`
+package katas.`5kyu`
 
 /**
  * My friend John and I are members of the "Fat to Fit Club (FFC)".
