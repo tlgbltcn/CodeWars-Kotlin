@@ -29,6 +29,9 @@ val primes = sequenceOf(2L) + generateSequence(3L) { it + 2L }.filter(Long::isPr
 
 fun Long.isPrime____(): Boolean = this > 1L && primes.takeWhile { it * it <= this }.all { this % it != 0L }
 
+fun isPrime_____(x: Long) = (2L..Math.sqrt(x.toDouble()).toLong()).none { x % it == 0L }
+
+
 
 
 
