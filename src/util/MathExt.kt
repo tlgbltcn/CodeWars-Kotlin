@@ -31,6 +31,8 @@ fun Long.isPrime____(): Boolean = this > 1L && primes.takeWhile { it * it <= thi
 
 fun isPrime_____(x: Long) = (2L..Math.sqrt(x.toDouble()).toLong()).none { x % it == 0L }
 
+fun Long.isPrime______(): Boolean = this.rem(2) != 0L && (3..(this / 2) step 2).none { this.rem(it) == 0L }
+
 
 
 
