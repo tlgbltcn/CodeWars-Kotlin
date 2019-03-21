@@ -38,7 +38,7 @@ kprimes_step(5, 20, 0, 50) => []
 
 fun main() {
 
-    kprimesStep(2, 7, 246709, 247185).forEach(::print)
+    kprimesStep(2, 10, 0, 50).forEach(::print)
 }
 
 fun kprimesStep(k: Int, step: Int, start: Long, nd: Long): List<LongArray> {
@@ -53,8 +53,10 @@ fun Int.k_prime(x: Int): Boolean {
     var n = x
     var f = 0
     var p = 2
-    while (f <= this && p * p <= n) {
-        while (0 == n % p) n /= p; f++
+    while (f < this && p * p <= n) {
+        while (0 == n % p) {
+            n /= p; f++
+        }
         p++
     }
     return f + (if (n > 1) 1 else 0) == this
@@ -63,8 +65,8 @@ fun Int.k_prime(x: Int): Boolean {
 fun Int.primes(n: Long, start: Long): List<Int> {
     var i = start.toInt()
     val list = mutableListOf<Int>()
-    for (t in i..n.toInt() + 1) {
-        if (k_prime(t)) list.add(t)
+    while (i < n + 1) {
+        if (k_prime(i)) list.add(i)
         i++
     }
     return list
