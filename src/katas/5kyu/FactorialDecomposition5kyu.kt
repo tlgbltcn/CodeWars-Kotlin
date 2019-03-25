@@ -121,5 +121,27 @@ fun decompSmall(m: Int): Map<Int, Int> {
     return result
 }
 
+/*********************** Best Practice *************************/
+
+fun decomp__(m: Int): String {
+    val records = sortedMapOf<Int, Int>()
+    for (i in 2..m) {
+        var factor = i
+        for (f in records.keys) {
+            if (f > factor) {
+                break
+            }
+            while (factor % f == 0) {
+                records[f] = (records[f] ?: 0) + 1
+                factor /= f
+            }
+        }
+        if (factor > 1) {
+            records[factor] = 1
+        }
+    }
+    return records.toList().joinToString(" * ") { (f, p) -> if (p > 1) "$f^$p" else "$f" }
+}
+
 
 
