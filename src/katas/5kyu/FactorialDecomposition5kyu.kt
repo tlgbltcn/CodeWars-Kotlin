@@ -1,6 +1,7 @@
 package katas.`5kyu`
 
 import java.math.BigInteger
+import java.util.*
 
 /**
  * The aim of the kata is to decompose n! (factorial n) into its prime factors.
@@ -60,4 +61,65 @@ fun getFactorial(number: Int): BigInteger {
     for (i in 1..number) factorial *= i.toBigInteger()
     return factorial
 }
+
+/*********************** Best Practice *************************/
+
+fun decompp(m: Int) = sharredFact(m)
+    .map { if (it.second != 1) "${it.first}^${it.second}" else "${it.first}" }
+    .joinToString(" * ")
+
+
+fun sharredFact(n: Int): ArrayList<Pair<Int, Int>> {
+    var prime = 1
+    val list: ArrayList<Pair<Int, Int>> = arrayListOf()
+    generateSequence(prime) {
+        prime = primeFactory_(prime)
+        var count = 0
+        var temp = prime
+        while (temp <= n) {
+            count = (count + Math.ceil((n / temp).toDouble())).toInt()
+            temp *= prime
+        }
+        if (prime <= n) list.add(Pair(prime, count))
+        prime
+    }.takeWhile { it < n }.last()
+    return list
+}
+
+fun primeFactory_(n: Int): Int {
+    return if (!(n + 1).toLong().isPrime__()) primeFactory(n + 1) else n + 1
+}
+
+fun Long.isPrime__(): Boolean {
+    val bigInt = BigInteger.valueOf(this)
+    return bigInt.isProbablePrime(32)
+}
+
+/*********************** Best Practice *************************/
+
+fun decomp_(m: Int): String {
+    val map = TreeMap<Int, Int>()
+    for (i in 2..m) {
+        val decMap = decompSmall(i)
+        decMap.forEach { (key, value) -> map[key] = (map[key] ?: 0) + value }
+    }
+    return map.map { if (it.value > 1) "${it.key}^${it.value}" else "${it.key}" }.joinToString(" * ")
+}
+
+fun decompSmall(m: Int): Map<Int, Int> {
+    var div = 2
+    var mm = m
+    val result = TreeMap<Int, Int>()
+    while (mm > 1) {
+        if (mm % div == 0) {
+            result[div] = (result[div] ?: 0) + 1
+            mm /= div
+        } else {
+            div++
+        }
+    }
+    return result
+}
+
+
 
