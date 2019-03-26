@@ -40,8 +40,7 @@ fun main() {
 
     elements.zipWithNext { a, b -> a to b }.toMap()
 
-    elements.zipWithNext { a, b -> "${b}  ---> ${a} ----->" }.forEach(::print)
+    elements.zipWithNext { a, b -> ",$b  ---> $a ----->" }.forEach(::print)
 
     elements.shuffled().forEach(::print)
-
 }
