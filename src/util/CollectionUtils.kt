@@ -23,7 +23,6 @@ var data =
 
 val elements = listOf("A", "B", "C", "D", "E", "F", "G", "H")
 
-
 fun main() {
 
     println(data.split("\n").joinToString(" "))
