@@ -5,11 +5,16 @@ package util
 import java.math.BigInteger
 import java.util.stream.IntStream
 
+object MathExt {
+    val square: (Int) -> Int = { x -> x * x }
+
+}
 
 fun Long.isPrime(): Boolean {
     return this > 2 && IntStream.rangeClosed(2, Math.sqrt(this.toDouble()).toInt())
         .noneMatch { n -> this.toInt() % n == 0 }
 }
+
 
 fun Long.isPrime_(): Boolean {
     var isNotPrime = false
