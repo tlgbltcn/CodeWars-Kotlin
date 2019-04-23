@@ -20,6 +20,12 @@ fun main() {
     val function = MyFunction()
     function()
 
+    val config = Config()
+    println()
+    println(config.invoke().invoke("sas").invoke("rwf"))
+    println()
+    myValues.invoke("tolga", 29)
+    mRectangle.invoke(10, 20)
 }
 
 operator fun <T> String.invoke(obj: T): T = obj
@@ -48,5 +54,23 @@ class MyFunction : () -> Unit {
         println("I am called")
     }
 }
+
+class Config {
+    operator fun invoke(): String {
+        return this.getInvokeble()
+    }
+
+    fun getInvokeble(): String = "return value"
+}
+
+val myValues = { name: String, age: Int -> println("$name ----> $age") }
+
+val mRectangle: (x: Int, y: Int) -> Int = { x, y -> println(x * y); x * y }
+
+
+
+
+
+
 
 

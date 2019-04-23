@@ -1,4 +1,4 @@
-package katas.`6kyu`
+package katas.`5kyu`
 
 import junit.framework.Assert.assertTrue
 import org.junit.Test
@@ -66,7 +66,8 @@ class TrickyKotlin6__<T : Any> private constructor(private val cl: KClass<*>) {
 
     companion object {
 
-        internal inline operator fun <reified T : Any> invoke(): TrickyKotlin6__<T> = TrickyKotlin6__(T::class)
+        internal inline operator fun <reified T : Any> invoke(): TrickyKotlin6__<T> =
+            TrickyKotlin6__(T::class)
     }
 
     fun classOrSuperClassOf(anyGetter: () -> Any) =
