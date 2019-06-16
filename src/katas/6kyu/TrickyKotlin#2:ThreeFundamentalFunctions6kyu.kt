@@ -14,6 +14,8 @@ forceRun (whatever happens (exceptions? errors?), just make it continue)
 The example tests are nearly the same as the final tests(just some more robust tests). This is why I provide such poor initial solution.
  */
 
+
+
 private fun unless(boolean: Boolean, function: () -> Unit) {
     if (boolean.not()) function()
 }
@@ -62,4 +64,8 @@ class KotlinTricks2 {
         forceRun { a = 2 }
         assertEquals(a, 2)
     }
+}
+
+fun main() {
+
 }
