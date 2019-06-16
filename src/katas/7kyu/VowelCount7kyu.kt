@@ -25,6 +25,7 @@ fun main(args: Array<String>) {
     println("32".maxRepeatingForNumbers())          //true
 }
 
+
 fun getCount(str : String) : Int{
     val character = "aeio"
     var count = 0

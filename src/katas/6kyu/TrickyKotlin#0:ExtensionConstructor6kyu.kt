@@ -20,9 +20,6 @@ operator fun Long.Companion.invoke(s: String) = s.toLong()
 
 operator fun Double.Companion.invoke(s: String) = s.toDouble()
 
-operator fun Long.invoke(s: String) = s.toLong()
-
-
 class KotlinTrickss {
     @Test
     fun testInt() {
