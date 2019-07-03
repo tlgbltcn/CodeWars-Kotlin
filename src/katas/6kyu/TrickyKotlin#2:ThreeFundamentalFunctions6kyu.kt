@@ -65,3 +65,7 @@ class KotlinTricks2 {
         assertEquals(a, 2)
     }
 }
+
+fun main() {
+
+}

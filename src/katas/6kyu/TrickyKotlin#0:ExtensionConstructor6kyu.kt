@@ -14,18 +14,16 @@ In this Kata, you should make some extension constructor. For example, you can a
 You should add such extension constructor to kotlin.Int, kotlin.Long, kotlin.Double.
  */
 
-operator fun kotlin.Int.Companion.invoke(s: String) = s.toInt()
+operator fun Int.Companion.invoke(s: String) = s.toInt()
 
-operator fun kotlin.Long.Companion.invoke(s: String) = s.toLong()
+operator fun Long.Companion.invoke(s: String) = s.toLong()
 
-operator fun kotlin.Double.Companion.invoke(s: String) = s.toDouble()
-
-operator fun Long.invoke(s: String) = s.toLong()
+operator fun Double.Companion.invoke(s: String) = s.toDouble()
 
 class KotlinTrickss {
     @Test
     fun testInt() {
         val r = Random(System.currentTimeMillis())
-        (0..100).forEach { r.nextInt().let { assertEquals(it, kotlin.Int(it.toString())) } }
+        (0..100).forEach { r.nextInt().let { assertEquals(it, Int(it.toString())) } }
     }
 }

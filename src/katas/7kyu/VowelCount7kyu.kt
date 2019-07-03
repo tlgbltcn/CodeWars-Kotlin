@@ -31,13 +31,12 @@ fun getCount(str : String) : Int{
     var count = 0
 
     str.forEach {
-        var char = it
+        val char = it
         character.forEach {
             if (char.toString().equals(it.toString())) count++
         }
     }
     return count
 }
-
 
 fun getCount_ (str: String) = str.count{it in "aeiou"}
