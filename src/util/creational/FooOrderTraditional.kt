@@ -3,10 +3,10 @@ package util.creational
 
 class FoodOrder private constructor(builder: Builder) {
 
-    val bread: String?
-    val condiments: String?
-    val meat: String?
-    val fish: String?
+    private val bread: String?
+    private val condiments: String?
+    private val meat: String?
+    private val fish: String?
 
     init {
         this.bread = builder.bread
@@ -39,6 +39,4 @@ fun main() {
         .bread("Yes")
         .condiments("Yes")
         .build()
-
-    foodOrder
 }
