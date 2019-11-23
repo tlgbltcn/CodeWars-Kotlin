@@ -26,17 +26,5 @@ fun maxRepeating(str: String): Char {
     return res
 }
 
-fun String.maxRepeatingForNumbers(x : Int =0): Boolean {
-    var count = 0
-    this.reduce { acc, c ->
-        if (Integer.valueOf(acc.toString()) + 1 == Integer.valueOf(c.toString()) ) count++
-        c }
-    if (count < 2) {
-        count = 0
-        this.reversed().reduce { acc, c ->
-            if (Integer.valueOf(acc.toString()) + 1 == Integer.valueOf(c.toString()) ) count++
-            c }
-    }
-    return count < 2
-}
+
 

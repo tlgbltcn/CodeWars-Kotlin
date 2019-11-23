@@ -1,9 +1,5 @@
 package util
 
-import javafx.util.Duration.hours
-import javafx.util.Duration.minutes
-
-
 object Operators {
 
     @JvmStatic

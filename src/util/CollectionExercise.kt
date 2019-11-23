@@ -37,9 +37,9 @@ fun main() {
 
     elements.windowed(2, 2, false) { (switch, value) -> switch to value }.toMap()
 
-    elements.zipWithNext { a, b -> a to b }.toMap()
+    println(elements.zipWithNext { a, b -> a to b }.toMap().forEach(::println))
 
-    elements.zipWithNext { a, b -> ",$b  ---> $a ----->" }.forEach(::print)
+    println(elements.zipWithNext { a, b -> " $a ---> $b --->" }.forEach(::print))
 
     elements.shuffled().forEach(::print)
 }

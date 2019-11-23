@@ -24,6 +24,6 @@ class KotlinTrickss {
     @Test
     fun testInt() {
         val r = Random(System.currentTimeMillis())
-        (0..100).forEach { r.nextInt().let { assertEquals(it, Int(it.toString())) } }
+        (0..100).forEach { _ -> r.nextInt().let { assertEquals(it, Int(it.toString())) } }
     }
 }
