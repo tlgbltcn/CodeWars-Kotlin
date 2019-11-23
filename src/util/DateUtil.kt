@@ -8,16 +8,16 @@ import java.util.TimeZone
 private val FORMAT = "yyyy-MM-dd"
 
 fun main() {
-    println(DateUtil.TODAY.calculateDiffDate(DAY_OF_YEAR, 0).timeInMillisToDate(FORMAT))
-    println(DateUtil.SEVEN_DAYS.calculateDiffDate(DAY_OF_YEAR, -7).timeInMillisToDate(FORMAT))
-    println(DateUtil.ONE_MONTH.calculateDiffDate(MONTH, -1).timeInMillisToDate(FORMAT))
-    println(DateUtil.THREE_MONTH.calculateDiffDate(MONTH, -3).timeInMillisToDate(FORMAT))
-    println(DateUtil.SIX_MONTH.calculateDiffDate(MONTH, -6).timeInMillisToDate(FORMAT))
-    println(DateUtil.LAST_YEAR.calculateDiffDate(YEAR, -1).timeInMillisToDate(FORMAT))
-    println(convertDiffToLong(YEAR, -1).timeInMillisToDate(FORMAT))
+    println(DateUtil.TODAY.calculateDiffDate(DAY_OF_YEAR, 0)::timeInMillisToDate)
+    println(DateUtil.SEVEN_DAYS.calculateDiffDate(DAY_OF_YEAR, -7)::timeInMillisToDate)
+    println(DateUtil.ONE_MONTH.calculateDiffDate(MONTH, -1)::timeInMillisToDate)
+    println(DateUtil.THREE_MONTH.calculateDiffDate(MONTH, -3)::timeInMillisToDate)
+    println(DateUtil.SIX_MONTH.calculateDiffDate(MONTH, -6)::timeInMillisToDate)
+    println(DateUtil.LAST_YEAR.calculateDiffDate(YEAR, -1)::timeInMillisToDate)
+    println(convertDiffToLong(YEAR, -1)::timeInMillisToDate)
 }
 
-fun Long.timeInMillisToDate(format: String) = SimpleDateFormat(format).format(Date(this))
+fun Long.timeInMillisToDate() = SimpleDateFormat(FORMAT).format(Date(this))
 
 fun convertDiffToLong(field: Int, amount: Int): Long {
     val c = getInstance(TimeZone.getTimeZone("UTC"))

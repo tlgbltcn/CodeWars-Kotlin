@@ -24,9 +24,8 @@ class FooOrder(val pepper: String?,
 fun main() {
     val fooOrder = FooOrder.Builder()
         .bread("Yes")
+        .bread("")
         .fish("Yes")
         .salads("No")
         .build()
-
-    fooOrder
 }
