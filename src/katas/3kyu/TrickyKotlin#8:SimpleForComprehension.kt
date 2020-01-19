@@ -15,7 +15,7 @@ import java.util.Optional.of as some
  * Let's build a simple for-comprehension DSL in kotlin!
 
 Look, I have a function like this:
-
+a
 import java.util.Optional
 fun plus(o1: Optional<Int>, o2: Optional<Int>): Optional<Int> {
 if (o1.isPresent && o2.isPresent)
