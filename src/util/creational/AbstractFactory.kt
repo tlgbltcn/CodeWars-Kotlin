@@ -17,11 +17,11 @@ interface PieChart : Chart {
 }
 
 class iOSLineChart(override var thickness: Double? = null) : LineChart {
-    override fun draw() = println("This is iOS line chart draw. ${thickness?.let { "Thicness : $it" } ?: ""}")
+    override fun draw() = println("This is iOS line chart draw. ${thickness?.let { "Thickness : $it" } ?: ""}")
 }
 
 class AndroidLineChart(override var thickness: Double? = null) : LineChart {
-    override fun draw() = println("This is Android line chart draw. ${thickness?.let { "Thicness : $it" } ?: ""}")
+    override fun draw() = println("This is Android line chart draw. ${thickness?.let { "Thickness : $it" } ?: ""}")
 }
 
 class iOSPieChart(override var perimeter: Double? = null) : PieChart {
