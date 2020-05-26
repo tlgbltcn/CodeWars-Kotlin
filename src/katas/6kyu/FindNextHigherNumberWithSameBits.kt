@@ -1,5 +1,8 @@
 package katas.`6kyu`
 
+import junit.framework.Assert.assertEquals
+import org.junit.Test
+
 /**
 Your task is to Find the next higher number (int) with same '1'- Bits.
 
@@ -64,3 +67,13 @@ fun ____nextHigher(n: Int): Int {
     return m
 }
 
+class TestKata {
+    @Test
+    fun basicTests() {
+        assertEquals(256, __nextHigher(128))
+        assertEquals(2, __nextHigher(1))
+        assertEquals(1279, __nextHigher(1022))
+        assertEquals(191, __nextHigher(127))
+        assertEquals(1253359, __nextHigher(1253343))
+    }
+}

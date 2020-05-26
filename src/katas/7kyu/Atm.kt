@@ -12,6 +12,7 @@ Good Luck!!!
 
 fun main() {
     println(count(770))
+    println(__count(770))
 }
 
 val availableCaches = listOf(500, 200, 100, 50, 20, 10)
@@ -38,7 +39,21 @@ fun count(number: Int): Int {
     return quotient
 }
 
-fun countT(amount: Int): Int {
+fun _count(amount: Int): Int {
     val (a, k) = availableCaches.fold(Pair(amount, 0)){ (a, k), v -> Pair(a % v, k + a / v) }
     return if (a == 0) k else -1
+}
+
+fun __count(number: Int): Int {
+    var remaining = number
+    val notes = listOf(500, 200, 100, 50, 20, 10)
+    var max = 0
+    for (x in notes){
+        val temp = remaining/x
+        if (temp > 0){
+            remaining -= temp*x
+            max += temp
+        }
+    }
+    if (remaining > 0) return -1 else return max
 }

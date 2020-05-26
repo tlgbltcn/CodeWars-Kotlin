@@ -1,5 +1,6 @@
 package util
 
+import java.lang.StringBuilder
 import kotlin.system.measureNanoTime
 import kotlin.system.measureTimeMillis
 
@@ -67,8 +68,27 @@ fun parseFullName(name: String): Name {
     return Name(firstName = parser.first(), lastName = parser.last())
 }
 
+fun change(str: String): String {
+    val stringBuilder = StringBuilder()
+    val temp = CharRange('A', 'Z').toList()
+    val uniqStr = str.trim().replace(" ", "").toList().toSet().joinToString("").toUpperCase()
+    temp.forEach {
+        if (uniqStr.contains(it)) stringBuilder.append(1) else stringBuilder.append(0)
+    }
+    return stringBuilder.toString()
+}
 
 fun main() {
+
+    println(change("sdadaf"))
+    val x = "asadsasdasfadasfasf".toList()
+    val y = x.toSet()
+    x.forEach(::print)
+    println()
+    y.forEach(::print)
+    println()
+
+    CharRange('a', 'z').forEach(::print)
 
     println(data.split("\n").joinToString(" "))
 
