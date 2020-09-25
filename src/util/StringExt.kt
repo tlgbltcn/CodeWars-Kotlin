@@ -27,3 +27,5 @@ fun <T : Any, R : Any> safeLet(first: T?, second: R?, block: (first: T, second: 
     } else false
 }
 
+val string = mutableListOf("a", "b", "c")
+val x = string.joinToString(separator = "") { "- ".plus(it).plus("\n") }
