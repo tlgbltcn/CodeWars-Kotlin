@@ -62,13 +62,14 @@ val mapRomanNumbers = arrayListOf(
 /*********************** Best Practice *************************/
 
 fun encode_(num: Int): String {
-    tailrec fun encodeAux(num: Int, acc: String): String =
-        if (num == 0) acc else {
-            val (k, v) = numerals.first { it.second <= num }
-            encodeAux(num - v, acc + k)
-        }
     return encodeAux(num, "")
 }
+
+tailrec fun encodeAux(num: Int, acc: String): String =
+    if (num == 0) acc else {
+        val (k, v) = numerals.first { it.second <= num }
+        encodeAux(num - v, acc + k)
+    }
 
 val numerals = listOf("M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I").zip(
     listOf(1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1)

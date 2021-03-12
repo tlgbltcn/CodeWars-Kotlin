@@ -24,8 +24,8 @@ tailrec fun loop(random: Random, int: Int): Int {
     }
 }
 
-tailrec fun loop_(random: java.util.Random, int: Int): Int =
-    if (int <= 0) random.nextInt() else loop(random.apply { nextInt() }, int - 1)
+tailrec fun loop_(random: Random, int: Int): Int =
+    if (int <= 0) random.nextInt() else loop_(random.apply { nextInt() }, int - 1)
 
 fun loop__(random: Random, int: Int): Int {
     repeat(int) { random.nextInt() }
@@ -34,7 +34,7 @@ fun loop__(random: Random, int: Int): Int {
 
 tailrec fun loop___(random: Random, int: Int): Int {
     val r = random.nextInt()
-    return if (int <= 0) r else loop(random, int - 1)
+    return if (int <= 0) r else loop___(random, int - 1)
 }
 
 tailrec fun loop____(random: Random, int: Int): Int {
@@ -42,19 +42,8 @@ tailrec fun loop____(random: Random, int: Int): Int {
         int <= 0 -> return random.nextInt()
         else -> random.nextInt()
     }
-    return loop(random, int - 1)
+    return loop____(random, int - 1)
 }
-
-// the one above works but it doesn't satisfy the condition
-
-// ***********************************************
-// ******************* MENTION *******************
-// Please remove the comment above to pass the test
-// ******************* MENTION *******************
-// ***********************************************
-
-
-// StackOverflow
 
 class KotlinTricks4 {
     @Test
