@@ -29,6 +29,8 @@ var data =
 
 val elements = listOf("A", "B", "C", "D", "E", "F", "G", "H")
 
+var listInList = listOf(listOf(1,2,3), listOf("a","b","c"), listOf(true, false, false), listOf("A"))
+
 data class Shape(
     val id: Long,
     val name: String,
@@ -446,6 +448,16 @@ fun main() {
 
     val productCool = someNumbers.fold(1, Int::times)
     println(productCool)
+
+    println("without flatmap")
+    listInList.map {
+        it
+    }.also {
+        println(it)
+    }
+
+    println("with flatmap")
+    listInList.flatten().also { println(it) }
 }
 
 class Version(val major: Int, val minor: Int) : Comparable<Version> {
