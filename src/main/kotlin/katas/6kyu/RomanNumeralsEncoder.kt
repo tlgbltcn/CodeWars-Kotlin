@@ -59,7 +59,7 @@ val mapRomanNumbers = arrayListOf(
 )
 
 
-/*********************** Best Practice *************************/
+/*********************** Alternatives *************************/
 
 fun encode_(num: Int): String {
     return encodeAux(num, "")

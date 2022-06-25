@@ -2,7 +2,6 @@ package katas.`6kyu`
 
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
-import util.invoke
 import java.io.File
 import java.util.*
 
@@ -42,6 +41,7 @@ operator fun String.invoke(i: Int): Int = i
 
 operator fun String.invoke(f: File): File = f
 
+/*********************** Tests *************************/
 
 class KotlinTricks0 {
     @Test

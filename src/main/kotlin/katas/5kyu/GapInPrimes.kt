@@ -66,7 +66,7 @@ fun Long.isPrime(): Boolean {
     return bigInt.isProbablePrime(32)
 }
 
-/*********************** Best Practice *************************/
+/*********************** Alternatives *************************/
 
 fun isPrime_(x: Long) = (2L..sqrt(x.toDouble()).toLong()).none { x % it == 0L }
 

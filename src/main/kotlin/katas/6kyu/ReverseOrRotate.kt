@@ -70,10 +70,10 @@ fun revRot(nums: String, sz: Int): String {
         return ""
     }
 
-    var limit = (nums.length / sz) - 1
+    val limit = (nums.length / sz) - 1
     var result: String = ""
     for ((count, i) in (0..nums.length step sz).withIndex()) {
-        var process = nums.substring(i, i + sz)
+        val process = nums.substring(i, i + sz)
         result = "$result${revOrRot(checkCubicDivideTwo(process), process)}"
         if (count == limit) break
     }
@@ -83,7 +83,7 @@ fun revRot(nums: String, sz: Int): String {
 
 
 fun checkCubicDivideTwo(str: String): Boolean {
-    var total = str.asSequence().map {
+    val total = str.asSequence().map {
         it.toInt() * it.toInt() * it.toInt()
     }.sum()
 
@@ -98,7 +98,7 @@ fun revOrRot(isDivideTwo: Boolean, partOfStr: String): String {
     }
 }
 
-/*********************** Best Practice *************************/
+/*********************** Alternatives *************************/
 
 
 fun revRot_(nums: String, sz: Int) = nums
@@ -115,7 +115,7 @@ private val String.sumOfCubesOfDigits get() = map { it - '0' }.map { it * it }.s
 private infix fun Int.divisibleBy(n: Int) = (this % n) == 0
 private infix fun String.rotateLeftBy(n: Int) = substring(n) + substring(0, n)
 
-/*********************** Best Practice *************************/
+/*********************** Alternatives *************************/
 
 fun revRot__(nums: String, sz: Int): String =
     if (sz <= 0) ""
@@ -124,7 +124,7 @@ fun revRot__(nums: String, sz: Int): String =
     }.joinToString("")
 
 
-/*********************** Best Practice *************************/
+/*********************** Alternatives *************************/
 
 fun revRot___(nums: String, sz: Int): String {
     return nums.chunked(sz).map { r(it, sz) }.joinToString("")
@@ -138,7 +138,7 @@ fun r(s: String, sz: Int): String {
     }
 }
 
-/*********************** Best Practice *************************/
+/*********************** Alternatives *************************/
 
 
 fun revRot____(nums: String, sz: Int): String {

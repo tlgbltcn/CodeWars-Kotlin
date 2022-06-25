@@ -32,7 +32,7 @@ fun Kata(word : String) : String = if(word.length.rem(2)==0)
     word.slice((word.length/2)-1..(word.length/2))
     else word.slice(word.length/2..(word.length/2))
 
-/*********************** Best Practice *************************/
+/*********************** Alternatives *************************/
 
 
 fun getMiddle(word : String) : String {

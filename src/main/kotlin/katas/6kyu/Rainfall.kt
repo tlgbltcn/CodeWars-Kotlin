@@ -87,7 +87,7 @@ fun String.parseData(town: String) = this
     .map { it.toDouble() }
 
 
-/*********************** Best Practice *************************/
+/*********************** Alternatives *************************/
 
 private const val NO_TOWN_RECORD = -1.0
 
@@ -109,7 +109,7 @@ fun variancee(town: String, strng: String): Double = getRainfallForTown(town, st
 } ?: NO_TOWN_RECORD
 
 
-/*********************** Best Practice *************************/
+/*********************** Alternatives *************************/
 
 
 fun meannn(town: String, strng: String) = findRecords(town, strng)?.average() ?: -1.0

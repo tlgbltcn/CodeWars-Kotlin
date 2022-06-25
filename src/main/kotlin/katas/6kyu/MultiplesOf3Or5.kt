@@ -27,19 +27,19 @@ fun solution(number: Int) : Int{
 }
 
 
-/*********************** Best Practice *************************/
+/*********************** Alternatives *************************/
 
 fun solution_(number: Int): Int =
         (3 until number).filter { it % 3 == 0 || it % 5 == 0 }.sum()
 
-/*********************** Best Practice *************************/
+/*********************** Alternatives *************************/
 
 
 fun solution___(number: Int): Int {
     return IntRange(1, number - 1).filter { x -> x % 3 == 0 || x % 5 == 0 }.sum()
 }
 
-/*********************** Best Practice *************************/
+/*********************** Alternatives *************************/
 
 fun solution__(number: Int): Int {
     var res=0

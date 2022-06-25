@@ -46,7 +46,7 @@ fun digPow(n: Int, p: Int): Long {
 
 }
 
-/*********************** Best Practice *************************/
+/*********************** Alternatives *************************/
 
 
 fun digPoww(n: Int, p: Int) = n.toString().mapIndexed { i, c ->

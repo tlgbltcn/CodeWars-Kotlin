@@ -50,7 +50,7 @@ fun movie(card:Int, ticket:Int, perc:Double):Int {
     return count
 }
 
-/*********************** Best Practice *************************/
+/*********************** Alternatives *************************/
 
 fun movie_(card: Int, ticket: Int, percent: Double): Int {
     tailrec fun iter(i: Int, pb: Double, sa: Int, sb: Double): Int =

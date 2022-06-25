@@ -68,6 +68,8 @@ fun ____nextHigher(n: Int): Int {
     return m
 }
 
+/*********************** Tests *************************/
+
 class TestKata {
     @Test
     fun basicTests() {

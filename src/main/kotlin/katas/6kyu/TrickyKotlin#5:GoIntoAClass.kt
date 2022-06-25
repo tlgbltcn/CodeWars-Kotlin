@@ -46,6 +46,8 @@ data class Box(var x: Int, var y: Int, var width: Int, var height: Int) {
     fun leftDown() = width to (height + y)
 }
 
+/*********************** Tests *************************/
+
 class KotlinTricks5 {
     @Test
     fun testBox() {

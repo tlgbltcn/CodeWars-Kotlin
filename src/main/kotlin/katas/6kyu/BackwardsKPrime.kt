@@ -40,7 +40,7 @@ private fun Long.isPrime_(): Boolean {
     return bigInt.isProbablePrime(32)
 }
 
-/*********************** Best Practice *************************/
+/*********************** Alternatives *************************/
 
 fun Long.isPrimee(): Boolean = this.rem(2) != 0L && (3..(this / 2) step 2).none { this.rem(it) == 0L }
 

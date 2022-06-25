@@ -39,7 +39,7 @@ fun String.sumOfDigits() : Pair<String, Int> {
     return Pair(this, listOfInt.sum())
 }
 
-/*********************** Best Practice *************************/
+/*********************** Alternatives *************************/
 
 fun orderWeightt(string:String):String {
     return string.split(" ")

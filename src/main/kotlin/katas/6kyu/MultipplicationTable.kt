@@ -31,7 +31,7 @@ fun multiplicationTable(size: Int): Array<IntArray> {
 }
 
 
-/*********************** Best Practice *************************/
+/*********************** Alternatives *************************/
 
 
 fun multiplicationTable_(size: Int) = Array(size) { x -> IntArray(size) { y -> (x + 1) * (y + 1) } }

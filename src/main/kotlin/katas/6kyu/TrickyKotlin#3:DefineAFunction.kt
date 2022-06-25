@@ -30,17 +30,19 @@ val concat2: (s1: String, s2: String) -> String = { s1, s2 -> if (true) s1 + s2 
 
 data class concat3 constructor(var s1: String, var s2: String, var s: String = s1 + s2)
 
-val concet4: (s1: String, s2: String) -> String = { s1, s2 -> s1 + s2 }
+val concat4: (s1: String, s2: String) -> String = { s1, s2 -> s1 + s2 }
 
-val concet5: (s1: String, s2: String) -> String = fun(x, t) = x + t
+val concat5: (s1: String, s2: String) -> String = fun(x, t) = x + t
 
-fun concet6(s1: String, s2: String) = s1 + s2
+fun concat6(s1: String, s2: String) = s1 + s2
 
 val concatString_: (String, String) -> String = String::plus
 
 val concatString__: (s1: String, s2: String) -> String = String::plus
 
 val concatString = String::plus
+
+/*********************** Tests *************************/
 
 class KotlinTricks3 {
     @Test

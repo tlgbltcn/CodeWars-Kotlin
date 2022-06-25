@@ -63,7 +63,7 @@ fun thirt(n: Long) = generateSequence(n) {
 
 val seq = listOf(1, 10, 9, 12, 3, 4);
 
-tailrec fun thirtt(n: Long): Long {
+fun thirtt(n: Long): Long {
     val v = n.toString().toList()
         .reversed()
         .mapIndexed { index, c -> c.toString().toLong() * seq[index % seq.size] }
@@ -72,7 +72,7 @@ tailrec fun thirtt(n: Long): Long {
 }
 
 
-tailrec fun thirttt(n: Long): Long {
+fun thirttt(n: Long): Long {
     val new = n.toString().reversed().map { it - '0' }.mapIndexed { i, c -> seq[i % seq.size] * c }.sum().toLong()
     return if (new == n) n
     else thirt(new)

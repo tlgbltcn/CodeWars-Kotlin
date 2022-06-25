@@ -33,7 +33,7 @@ fun predictAge(age1: Int, age2: Int, age3: Int, age4: Int, age5: Int, age6: Int,
     return (Math.sqrt(total.toDouble()) / 2).toInt()
 }
 
-/*********************** Best Practice *************************/
+/*********************** Alternatives *************************/
 
 
 fun predictAge_ (vararg age : Int) : Int {

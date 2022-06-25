@@ -41,7 +41,7 @@ fun String.encrypt(): String = when {
 fun Char.ascii(): String = this.toByte().toInt().toString()
 
 
-/*********************** Best Practice *************************/
+/*********************** Alternatives *************************/
 
 
 fun encryptThiss(text: String): String {

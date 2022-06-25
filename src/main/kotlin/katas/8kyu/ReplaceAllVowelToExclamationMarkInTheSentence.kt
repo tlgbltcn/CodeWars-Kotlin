@@ -27,7 +27,7 @@ fun replace(s: String): String = s.replace("[aeiouAEIOU]".toRegex(),"!")
 
 fun replace__(s: String) : String = s.replace(Regex("[aeiou]", RegexOption.IGNORE_CASE),"!")
 
-/*********************** Best Practice *************************/
+/*********************** Alternatives *************************/
 
 fun replace_(s: String) = s.map { when (it) {
     'a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U' -> '!'

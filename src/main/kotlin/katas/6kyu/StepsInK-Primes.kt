@@ -72,7 +72,7 @@ fun Int.primes(n: Long, start: Long): List<Int> {
     return list
 }
 
-/*********************** Best Practice *************************/
+/*********************** Alternatives *************************/
 
 fun getFactors(number: Long): List<Long> {
     for (i in 2..number) {
@@ -84,7 +84,7 @@ fun getFactors(number: Long): List<Long> {
 }
 
 fun kprimesStepp(k: Int, stp: Int, start: Long, end: Long): List<LongArray> {
-    var kFactorNumbers = (start..end)
+    val kFactorNumbers = (start..end)
         .filter { getFactors(it).size == k }
 
     val result = mutableListOf<LongArray>()

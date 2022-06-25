@@ -53,7 +53,7 @@ fun alphabetWar(fight: String): String {
 
     val sb = StringBuilder()
     var listIndex = 0
-    var explodedList = ArrayList(LinkedHashSet<Int>(fight.bombExploded()))
+    val explodedList = ArrayList(LinkedHashSet<Int>(fight.bombExploded()))
 
     if (explodedList.isEmpty()) return fight.win()
 
@@ -95,7 +95,7 @@ fun String.win(): String {
     return if (score > 0) "Right side wins!" else if (score < 0) "Left side wins!" else "Let's fight again!"
 }
 
-/*********************** Best Practice *************************/
+/*********************** Alternatives *************************/
 
 fun alphabetWarr(fight: String): String {
     val _fight = fight.replace(Regex(""".?\*+.?"""), "")
