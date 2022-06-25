@@ -67,7 +67,7 @@ fun Long.isPrime(): Boolean {
     return bigInt.isProbablePrime(32)
 }
 
-/*********************** Best Practice *************************/
+/*********************** Alternatives *************************/
 
 
 fun stepp(g: Int, m: Long, n: Long) =

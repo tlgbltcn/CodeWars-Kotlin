@@ -54,8 +54,8 @@ fun travel(r: String, zipcode: String): String {
     var isZipCode = false
     val addressList = arrayListOf<Pair<String, String>>()
     val listAddress = r.split(",")
-    var streetName = arrayListOf<String>()
-    var houseNumber = arrayListOf<String>()
+    val streetName = arrayListOf<String>()
+    val houseNumber = arrayListOf<String>()
     listAddress.forEach {
         addressList.add(Pair(it.takeLast(8), it.dropLast(9)))
     }
@@ -71,7 +71,7 @@ fun travel(r: String, zipcode: String): String {
     return if (!isZipCode) "$zipcode:/" else "$zipcode:${streetName.joinToString(",")}/${houseNumber.joinToString(",")}"
 }
 
-/*********************** Best Practice *************************/
+/*********************** Alternatives *************************/
 
 val address = Pattern.compile("(?<number>\\d+) (?<street>.+) (?<zip>[A-Z]{2} \\d{5})")
 
@@ -102,7 +102,7 @@ data class Address(val zip: String, val street: String, val number: String) {
         matcher.group("number"))
 }
 
-/*********************** Best Practice *************************/
+/*********************** Alternatives *************************/
 
 val DIVIDER = " "
 
@@ -172,7 +172,7 @@ fun getHouseNo(address: String, divider: String) =
     address.getStringBetweenOccurenceOf(divider, 0, 1)
 
 
-/*********************** Best Practice *************************/
+/*********************** Alternatives *************************/
 
 
 fun travellll(r: String, zipcode: String): String {
@@ -200,7 +200,7 @@ fun travellll(r: String, zipcode: String): String {
 
 data class Addres(val zipCode: String, val streetAndTown: String, val houseNumber: String)
 
-/*********************** Best Practice *************************/
+/*********************** Alternatives *************************/
 
 
 data class StreetAddress(val houseNumber: Int, val street: String, val zipCode: String)

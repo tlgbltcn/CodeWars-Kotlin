@@ -47,14 +47,14 @@ fun find(integers: Array<Int>): Int {
 fun Int.isOddNumber(): Boolean = this % 2 == 0
 
 
-/*********************** Best Practice *************************/
+/*********************** Alternatives *************************/
 
 fun find___(integers: Array<Int>): Int {
     val partitionedArray = integers.partition { it % 2 == 0 }
     return if (partitionedArray.first.size == 1) partitionedArray.first[0] else partitionedArray.second[0]
 }
 
-/*********************** Best Practice *************************/
+/*********************** Alternatives *************************/
 
 
 fun find_(integers: Array<Int>): Int {
@@ -66,11 +66,11 @@ fun find_(integers: Array<Int>): Int {
     }
 }
 
-/*********************** Best Practice *************************/
+/*********************** Alternatives *************************/
 
 fun find__(integers: Array<Int>): Int {
-    var odds = integers.filter { (it % 2 == 1) || (it % 2 == -1) }
-    var evens = integers.filter { it % 2 == 0 }
+    val odds = integers.filter { (it % 2 == 1) || (it % 2 == -1) }
+    val evens = integers.filter { it % 2 == 0 }
     if (odds.size == 1) {
         return odds[0]
     }

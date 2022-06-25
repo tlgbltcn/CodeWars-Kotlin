@@ -41,7 +41,7 @@ fun longestA(s1:String, s2:String) : String{
     return s1.split("").toSet().union(s2.split("")).toSortedSet().joinToString("")
 }
 
-/*********************** Best Practice *************************/
+/*********************** Alternatives *************************/
 
 fun longest_(s1:String, s2:String):String {
     return (s1 + s2).toSortedSet().joinToString("")

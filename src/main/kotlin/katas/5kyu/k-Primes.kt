@@ -73,7 +73,7 @@ fun Int.primes_(n: Long, start: Long): List<Int> {
     return list
 }
 
-/*********************** Best Practice *************************/
+/*********************** Alternatives *************************/
 
 fun countKprimess(k: Int, start: Long, end: Long): LongArray {
     return (start..end).filterTo(ArrayList()) { found(it) + 1 == k }.toLongArray()

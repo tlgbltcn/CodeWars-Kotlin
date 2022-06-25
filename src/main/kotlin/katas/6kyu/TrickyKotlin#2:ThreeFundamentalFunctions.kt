@@ -16,7 +16,6 @@ The example tests are nearly the same as the final tests(just some more robust t
  */
 
 
-
 private fun unless(boolean: Boolean, function: () -> Unit) {
     if (boolean.not()) function()
 }
@@ -27,9 +26,10 @@ private fun until(function: () -> Boolean, function1: () -> Int) {
 
 private fun forceRun(function: () -> Unit) = try {
     function()
-} catch (e: Exception) {
+} catch (_: Exception) {
 }
 
+/*********************** Tests *************************/
 
 class KotlinTricks2 {
     private fun testUnlessHelper(boolean: Boolean) {

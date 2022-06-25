@@ -1,6 +1,5 @@
 package katas.`7kyu`
 
-import util.maxRepeating
 import util.maxRepeatingForNumbers
 
 /**

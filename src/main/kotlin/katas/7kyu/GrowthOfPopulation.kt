@@ -48,7 +48,7 @@ fun nbYear(pp0: Int, percent: Double, aug: Int, p: Int): Int {
     return year
 }
 
-/*********************** Best Practice *************************/
+/*********************** Alternatives *************************/
 
 
 fun nbYear_(pp0: Int, percent: Double, aug: Int, p: Int): Int =

@@ -44,16 +44,14 @@ fun bouncingBalls(h: Double, bounce: Double, window: Double): Int {
     var see: Int = -1
     for (it in h.toInt() downTo 0) {
 
-        if (bounce < 1.0 && bounce > 0.0 && h > window && h > 0) {
+        return if (bounce < 1.0 && bounce > 0.0 && h > window && h > 0) {
             see += 2
             mH = downBall(mH, bounce)
             println(mH.toString())
             if (window > mH) {
-                return see
-                (break)
-
+                see
             } else continue
-        } else return -1
+        } else -1
     }
     return -1
 }
@@ -66,7 +64,7 @@ fun downBall(h: Double, bounce: Double): Double {
     return maxRise
 }
 
-/*********************** Best Practice *************************/
+/*********************** Alternatives *************************/
 
 
 fun bouncingBall(h:Double, bounce:Double, window:Double):Int {

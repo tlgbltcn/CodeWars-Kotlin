@@ -74,7 +74,7 @@ fun plus(o1: Optional<Int>, o2: Optional<Int>) =
         yield(i1 + i2)
     }
 
-fun <T> `for`(lambda: () -> Optional<T>): Optional<T> =
+fun <T : Any> `for`(lambda: () -> Optional<T>): Optional<T> =
     runCatching(lambda).getOrElse { exception ->
         when (exception) {
             is NoSuchElementException -> Optional.empty()
@@ -82,7 +82,7 @@ fun <T> `for`(lambda: () -> Optional<T>): Optional<T> =
         }
     }
 
-fun <T> yield(value: T): Optional<T> = Optional.of(value)
+fun <T : Any> yield(value: T): Optional<T> = Optional.of(value)
 
 fun <T> bind(optional: Optional<T>): T = optional.get()
 
@@ -99,14 +99,16 @@ fun pluss(o1: Optional<Int>, o2: Optional<Int>): Optional<Int> {
         return Optional.empty()
 }
 
+/*********************** Tests *************************/
+
 class SimpleForComprehensionTest {
 
     @Test
     fun test1_IntAddition() {
         fun plus(
-            o1: java.util.Optional<Int>,
-            o2: java.util.Optional<Int>
-        ): java.util.Optional<Int> =
+            o1: Optional<Int>,
+            o2: Optional<Int>
+        ): Optional<Int> =
             `for` {
                 val i: Int = bind(o1)
                 val j: Int = bind(o2)
@@ -114,8 +116,8 @@ class SimpleForComprehensionTest {
             }
 
         fun testPlus(
-            expected: java.util.Optional<Int>,
-            o1: java.util.Optional<Int>, o2: java.util.Optional<Int>
+            expected: Optional<Int>,
+            o1: Optional<Int>, o2: Optional<Int>
         ) {
             val actual = plus(o1, o2)
             assert(expected == actual) { "$o1 plus $o2 should be $expected, but you give me a $actual" }
@@ -134,9 +136,9 @@ class SimpleForComprehensionTest {
          * If [o1] gets empty, [o2] should never be used!
          */
         fun concat(
-            o1: () -> java.util.Optional<String>,
-            o2: () -> java.util.Optional<String>
-        ): java.util.Optional<String> =
+            o1: () -> Optional<String>,
+            o2: () -> Optional<String>
+        ): Optional<String> =
             `for` {
                 val i: String = bind(o1())
                 val j = " is "
@@ -157,7 +159,7 @@ class SimpleForComprehensionTest {
 
     @Test
     fun test3_EatRice() {
-        val sb: java.util.Optional<StringBuilder> = `for` {
+        val sb: Optional<StringBuilder> = `for` {
             val i: Int = bind(some(1551))
             val s: CharSequence = bind(`for` { yield("ywwuyi") })
             var sb: StringBuilder = bind(some(StringBuilder(100)))
@@ -172,21 +174,21 @@ class SimpleForComprehensionTest {
     @Test
     fun test4_RandomIntAddition() {
         fun plus(
-            o1: java.util.Optional<Int>,
-            o2: java.util.Optional<Int>
-        ): java.util.Optional<Int> =
+            o1: Optional<Int>,
+            o2: Optional<Int>
+        ): Optional<Int> =
             `for` {
                 val i: Int = bind(o1)
                 val j: Int = bind(o2)
                 yield(i + j)
             }
 
-        fun okPlus(o1: java.util.Optional<Int>, o2: java.util.Optional<Int>) =
+        fun okPlus(o1: Optional<Int>, o2: Optional<Int>) =
             o1.flatMap { i1 -> o2.flatMap { i2 -> some(i1 + i2) } }
 
-        val random = java.util.Random()
+        val random = Random()
         fun getRandomInt() =
-            java.util.Optional.ofNullable(random.nextInt(1_0000_0000).takeIf { it < (1_0000_0000 * 0.618) })
+            Optional.ofNullable(random.nextInt(1_0000_0000).takeIf { it < (1_0000_0000 * 0.618) })
 
         repeat(100) {
             val o1 = getRandomInt()

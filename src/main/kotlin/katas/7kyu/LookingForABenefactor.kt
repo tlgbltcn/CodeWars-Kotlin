@@ -35,7 +35,7 @@ fun newAvg(a: DoubleArray, navg: Double): Long = if((((a.size +1)  * navg) - a.s
 else Math.ceil((((a.size +1)  * navg) - a.sum())).toLong()
 
 
-/*********************** Best Practice *************************/
+/*********************** Alternatives *************************/
 
 fun newAvg_(a: DoubleArray, navg: Double) = ceil(navg * (a.size + 1) - a.sum()).toLong().takeIf { it > 0 }
         ?: throw IllegalArgumentException()

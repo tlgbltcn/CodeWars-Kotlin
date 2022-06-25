@@ -26,14 +26,14 @@ fun main(args: Array<String>) {
 
 fun meeting(s: String): String {
 
-    var list = s.split(Regex(";")).map { "${it.split(Regex(":")).last()}, ${it.split(Regex(":")).first()}"}
+    val list = s.split(Regex(";")).map { "${it.split(Regex(":")).last()}, ${it.split(Regex(":")).first()}"}
     return list.map { it.myRotate() }.sortedBy { it.toUpperCase() }.joinToString("").toUpperCase()
 }
 
 fun String.myRotate(): String = this.map { it }.joinToString(prefix = "(", postfix = ")", separator = "")
 
 
-/*********************** Best Practice *************************/
+/*********************** Alternatives *************************/
 
 
 fun meeting_(s: String) = "(" + s.toUpperCase().split(";")

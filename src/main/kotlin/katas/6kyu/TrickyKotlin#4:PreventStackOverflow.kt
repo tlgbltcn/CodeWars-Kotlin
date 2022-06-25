@@ -17,10 +17,10 @@ Please do something to prevent it from raising an error.
  */
 
 tailrec fun loop(random: Random, int: Int): Int {
-    if (int <= 0) return random.nextInt()
+    return if (int <= 0) random.nextInt()
     else {
         random.nextInt()
-        return loop(random, int - 1)
+        loop(random, int - 1)
     }
 }
 
@@ -45,14 +45,16 @@ tailrec fun loop____(random: Random, int: Int): Int {
     return loop____(random, int - 1)
 }
 
+/*********************** Tests *************************/
+
 class KotlinTricks4 {
     @Test
     fun loopTest() {
         fun loopTester(random: Random, int: Int): Int {
-            (1..int).forEach { random.nextInt() }
+            (1..int).forEach { _ -> random.nextInt() }
             return random.nextInt()
         }
-        (0..100).forEach {
+        (0..100).forEach { _ ->
             val i = System.currentTimeMillis()
             assertEquals(loopTester(Random(i), 10000), loop_(Random(i), 10000))
         }

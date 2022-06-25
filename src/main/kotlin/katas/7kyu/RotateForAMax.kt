@@ -49,7 +49,7 @@ fun maxRot(n: Long) : Long {
 }
 
 
-/*********************** Best Practice *************************/
+/*********************** Alternatives *************************/
 
 
 fun maxRott(n:Long):Long =
@@ -60,7 +60,7 @@ fun maxRott(n:Long):Long =
             (it.first + it.second).toLong()
         }.maxOrNull() ?:n
 
-/*********************** Best Practice *************************/
+/*********************** Alternatives *************************/
 
 
 fun maxRottt(n:Long):Long = generateSequence("" to n.toString()) { it ->
@@ -70,7 +70,7 @@ fun maxRottt(n:Long):Long = generateSequence("" to n.toString()) { it ->
     .maxOrNull() ?: n
 
 
-/*********************** Best Practice *************************/
+/*********************** Alternatives *************************/
 
 fun maxRotttt(n: Long) = n.toString().let {
     it.foldIndexed(listOf(it.toLong())) { index, acc, _ ->

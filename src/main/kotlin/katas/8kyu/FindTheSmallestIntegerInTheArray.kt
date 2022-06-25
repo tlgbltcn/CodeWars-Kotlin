@@ -32,7 +32,7 @@ fun findSmallestInt(nums: List<Int>): Int {
     return nums[index]
 }
 
-/*********************** Best Practice *************************/
+/*********************** Alternatives *************************/
 
 
 fun findSmallestInt_(nums: List<Int>): Int = nums.minOrNull()!!

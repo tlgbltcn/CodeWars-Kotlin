@@ -22,7 +22,7 @@ fun twoOldestAges(ages: List<Int>): List<Int> {
     return listOf(newList[0],newList[1])
 }
 
-/*********************** Best Practice *************************/
+/*********************** Alternatives *************************/
 
 fun twoOldestAges_(ages: List<Int>) = ages.sorted().takeLast(2)
 

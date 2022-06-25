@@ -62,7 +62,7 @@ fun getFactorial(number: Int): BigInteger {
     return factorial
 }
 
-/*********************** Best Practice *************************/
+/*********************** Alternatives *************************/
 
 fun decompp(m: Int) = sharredFact(m)
     .map { if (it.second != 1) "${it.first}^${it.second}" else "${it.first}" }
@@ -95,7 +95,7 @@ fun Long.isPrime__(): Boolean {
     return bigInt.isProbablePrime(32)
 }
 
-/*********************** Best Practice *************************/
+/*********************** Alternatives *************************/
 
 fun decomp_(m: Int): String {
     val map = TreeMap<Int, Int>()
@@ -121,7 +121,7 @@ fun decompSmall(m: Int): Map<Int, Int> {
     return result
 }
 
-/*********************** Best Practice *************************/
+/*********************** Alternatives *************************/
 
 fun decomp__(m: Int): String {
     val records = sortedMapOf<Int, Int>()
